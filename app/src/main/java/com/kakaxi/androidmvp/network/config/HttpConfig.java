@@ -29,9 +29,9 @@ import okhttp3.ConnectionPool;
 public class HttpConfig {
 
     //    Base地址
-    public static final String BASE_URL = "http://grandway020.com/bc/";
+  
 
-//    public static final String BASE_URL = "http://192.168.1.114/smart_office_building/";
+   public static final String BASE_URL = "http://192.168.1.114/smart_office_building/";
 
     //是否开始日志
     public static final boolean DEBUG = true;
