@@ -24,11 +24,13 @@ public class ContractProxy {
 
     public void init(Class... clss) {
         for (Class cls : clss) {
+            //判断这个类是不是存在Implement注解
             if (cls.isAnnotationPresent(Implement.class)) {
 //                list.add(cls);
                 for (Annotation ann : cls.getDeclaredAnnotations()) {
                     if (ann instanceof Implement) {
                         try {
+                            //添加present
                             m_objects.put(cls, ((Implement) ann).value().newInstance());
                         } catch (InstantiationException e) {
                             e.printStackTrace();
@@ -46,6 +48,7 @@ public class ContractProxy {
         if (!m_objects.containsKey(clzz)) {
             init(clzz);
         }
+        //获取present
         BasePresenter presenter = ((BasePresenter) m_objects.get(clzz));
         if (var1 != presenter.getView()) {
             if (presenter.getView() != null) {

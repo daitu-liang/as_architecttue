@@ -20,7 +20,6 @@ public class LoginPresenterImp extends BasePresenter<LoginActivity> implements L
     @Override
     public void login(String phone, String pwd) {
         if(!isViewBind())return;
-
         Map<String, String> paramsmap = new LinkedHashMap<>();
         paramsmap.put("name", phone);
         paramsmap.put("password", pwd);
