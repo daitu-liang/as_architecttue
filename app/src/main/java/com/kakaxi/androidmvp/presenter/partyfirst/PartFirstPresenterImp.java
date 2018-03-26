@@ -7,7 +7,7 @@ import com.kakaxi.androidmvp.network.ParamsMapUtils;
 import com.kakaxi.androidmvp.network.RetrofitClient;
 import com.kakaxi.androidmvp.network.api.home.ApiService;
 import com.kakaxi.androidmvp.network.config.HttpConfig;
-import com.kakaxi.androidmvp.view.MainActivity;
+import com.kakaxi.androidmvp.ui.partfirst.MainActivity;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +20,7 @@ public class PartFirstPresenterImp extends BasePresenter<MainActivity> implement
     @Override
     public void getDataList() {
 
+        if(!isViewBind())return;
         Map<String, String> map = ParamsMapUtils.setReminding("1");
         RetrofitClient.getInstance()
                 .builder(ApiService.class)
@@ -29,7 +30,10 @@ public class PartFirstPresenterImp extends BasePresenter<MainActivity> implement
                 .subscribe(new ApiSubscriberByContext<List<AttenListBean>>(mView) {
                     @Override
                     protected void onSuccess(List<AttenListBean> bean) {
-                        mView.getResponseResult(bean);
+                        if(isViewBind()){
+                            mView.getResponseResult(bean);
+
+                        }
 
                     }
                 });

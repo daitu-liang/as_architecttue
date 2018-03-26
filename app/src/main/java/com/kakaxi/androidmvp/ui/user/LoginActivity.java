@@ -1,4 +1,4 @@
-package com.kakaxi.androidmvp.view.user;
+package com.kakaxi.androidmvp.ui.user;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +13,7 @@ import com.kakaxi.androidmvp.model.user.UserInfo;
 import com.kakaxi.androidmvp.presenter.user.LoginContract;
 import com.kakaxi.androidmvp.presenter.user.LoginPresenterImp;
 import com.kakaxi.androidmvp.utils.ToastUtils;
-import com.kakaxi.androidmvp.view.MainActivity;
+import com.kakaxi.androidmvp.ui.partfirst.MainActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;

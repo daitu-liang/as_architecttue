@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.kakaxi.androidmvp.view.MainActivity">
+    tools:context="com.kakaxi.androidmvp.ui.partfirst.MainActivity">
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"

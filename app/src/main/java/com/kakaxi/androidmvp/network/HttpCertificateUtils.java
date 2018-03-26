@@ -32,7 +32,7 @@ public class HttpCertificateUtils
 
         try {
             SSLContext sc = SSLContext.getInstance("TLS");
-            sc.init(null, new TrustManager[]{new TrustAllManager()},
+            sc.init(null, new TrustManager[]{getX509TrustManager()},
                     new SecureRandom());
             sSLSocketFactory = sc.getSocketFactory();
         } catch (Exception e) {
@@ -41,22 +41,25 @@ public class HttpCertificateUtils
         return sSLSocketFactory;
     }
 
-    public static class TrustAllManager implements X509TrustManager {
-        @Override
-        public void checkClientTrusted(X509Certificate[] chain, String authType)
-                throws CertificateException {
-        }
+    public static X509TrustManager getX509TrustManager(){
+       return  new X509TrustManager() {
+           @Override
+           public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
 
-        @Override
-        public void checkServerTrusted(X509Certificate[] chain, String authType)
+           }
 
-                throws CertificateException {
-        }
+           @Override
+           public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
 
-        @Override
-        public X509Certificate[] getAcceptedIssuers() {
-            return null;
-        }
+           }
+
+           @Override
+           public X509Certificate[] getAcceptedIssuers() {
+               return new X509Certificate[0];
+           }
+       } ;
     }
+
+
 
 }

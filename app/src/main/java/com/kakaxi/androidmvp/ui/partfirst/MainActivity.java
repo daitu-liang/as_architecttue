@@ -1,4 +1,4 @@
-package com.kakaxi.androidmvp.view;
+package com.kakaxi.androidmvp.ui.partfirst;
 
 import android.content.Context;
 import android.content.Intent;

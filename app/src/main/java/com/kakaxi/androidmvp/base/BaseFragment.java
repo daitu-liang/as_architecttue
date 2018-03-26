@@ -33,7 +33,9 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
 
 //    初始化事件Event
 
-    protected  abstract  void onEvent();
+    protected    void onEvent(){
+
+    };
 
     //    获得抽取接口Class对象
     protected  abstract Class getContractClazz();

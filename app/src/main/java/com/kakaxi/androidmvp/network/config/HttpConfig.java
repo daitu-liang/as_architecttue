@@ -29,14 +29,15 @@ import okhttp3.ConnectionPool;
 public class HttpConfig {
 
     //    Base地址
-  
 
-   public static final String BASE_URL = "http://192.168.1.114/smart_office_building/";
+    public static final String BASE_URL = "http://grandway020.com/bc/";
+
+//   public static final String BASE_URL = "http://192.168.1.114/smart_office_building/";
 
     //是否开始日志
     public static final boolean DEBUG = true;
 
-    public static boolean IS_CERTIFICATE=false;
+    public static boolean IS_CERTIFICATE=true;
 
     //    是否进行磁盘缓存
     public static boolean IS_CACHE=false;
@@ -87,7 +88,7 @@ public class HttpConfig {
        return HttpCertificateUtils.createSSLSocketFactory();
     }
     public static X509TrustManager getTrustManager(){
-        return  new HttpCertificateUtils.TrustAllManager();
+        return HttpCertificateUtils.getX509TrustManager();
     }
     public static HostnameVerifier getHostnameVerifier(){
         return HttpCertificateUtils.getHostnameVerifier();

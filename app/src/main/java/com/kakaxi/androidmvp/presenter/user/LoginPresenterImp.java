@@ -6,7 +6,7 @@ import com.kakaxi.androidmvp.network.ApiSubscriberByContext;
 import com.kakaxi.androidmvp.network.RetrofitClient;
 import com.kakaxi.androidmvp.network.api.commom.ApiCommom;
 import com.kakaxi.androidmvp.network.config.HttpConfig;
-import com.kakaxi.androidmvp.view.user.LoginActivity;
+import com.kakaxi.androidmvp.ui.user.LoginActivity;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -34,6 +34,7 @@ public class LoginPresenterImp extends BasePresenter<LoginActivity> implements L
                         if(isViewBind()){
                             mView.showsToast("登录成功");
                             mView.getResponseResult(bean);
+
                         }
 
                     }
